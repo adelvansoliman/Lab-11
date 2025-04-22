@@ -3,7 +3,6 @@ import sys, matplotlib.pyplot as plt
 import re
 
 def load_students(filename):
-    """Loads student data from a file."""
     students = {}
     with open(filename, 'r') as file:
         for line in file:
@@ -16,7 +15,6 @@ def load_students(filename):
     return students
 
 def load_assignments(filename):
-    """Loads assignment data from a file."""
     assignments = {}
     with open(filename, 'r') as file:
         lines = file.readlines()
@@ -28,7 +26,6 @@ def load_assignments(filename):
     return assignments
 
 def load_submissions():
-    """Loads submission data from files in the 'data' directory."""
     import os
     submissions = []
     for filename in os.listdir('data'):
@@ -41,7 +38,6 @@ def load_submissions():
 
 # 2.  Calculation Functions
 def calculate_student_grade(student_name, students, assignments, submissions):
-    """Calculates a student's overall grade."""
 
     student_grade = 0
     total_points = 0
@@ -64,7 +60,6 @@ def calculate_student_grade(student_name, students, assignments, submissions):
         return round((student_grade / total_points) * 100) if total_points > 0 else 0
 
 def calculate_assignment_stats(assignment_name, assignments, submissions):
-    """Calculates statistics for a given assignment."""
 
     scores = []
     assignment_found = False
@@ -89,8 +84,7 @@ def calculate_assignment_stats(assignment_name, assignments, submissions):
         return {"Min": 0, "Avg": 0, "Max": 0}
 
 def display_assignment_graph(assignment_name, assignments, submissions):
-    """Displays a histogram of assignment scores."""
-
+    
     scores = []
     assignment_found = False
 
